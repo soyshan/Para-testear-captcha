@@ -159,7 +159,7 @@ form.addEventListener('submit',(e)=>{
   const fd =new FormData(e.target);
   const params =new URLSearchParams(fd);
 
-  fetch ('http://localhost:3000/upload',{
+  fetch ('https://clinquant-rabanadas-53a186.netlify.app/upload',{
     method:"POST",
     body:params,
 
