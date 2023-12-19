@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Playpen Sans', cursive;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* productos */
+  #catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10vh;
+    justify-items: center;
+  }
+  
+  .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 2vh 50px;
+    text-align: center;
+    width: 300px;
+  }
+
+  .pagination {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .pagination button {
+    margin: 5px;
+    cursor: pointer;
+  }
+  .pagination button {
+  margin: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.pagination button.current {
+  background-color: #297780;
+  color: white;
+}
+.cart-container{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 460px;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow:-2px 0 4px hsl(0 4% 15%/ 10%);
+  display: none;
+}
+.cart-title{
+  text-align: center;
+  font-size:1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+ul .list-group{
+  display: none;
+}
+#currentPageIndicator {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+  .product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  .botones{
+    display: flex;
+    justify-content: center;
+    margin: 2vh 0vh;
+  }
+  .botones button{
+    margin-left: 2vh;
+    border: 1px solid #ccc;
+    width: 20vh;
+  }
+  
+  img {
+    width: 20vh;
+    height: 15vw;
+    margin-bottom: 10px;
+  } 
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+  
+/* Estilos para el botón de cierre */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  
+  h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #666;
+  }
+  .logo{
+    width: 80px;
+    height: 80px;
+  }
+  .navbar {
+    font-size: large;
+    font-weight: bold;
+    width: 218vh;
+  }
+  #searchButton{
+    margin-right: 2vh;
+  }
+  #searchContainer{
+    margin-top: 1vh;
+  }
+  .quantityInput{
+    width: 4vh;
+  }
+  .nav-item .fa-solid {
+    padding:0px 10px;
+  }
+  .nav-link{
+    margin:  5px 15px;
+  }
+
+  .navbar-nav li:hover a {
+    color: #297780; /* Color del texto al pasar el ratón */
+}
+#checkoutButton{
+  margin-left: 5vh;
+  margin-top: 2vh;
+}
+/* Añade estos estilos al final de tu archivo de estilos o en un nuevo archivo CSS */
+.close-cart-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #555; /* Color del icono */
+  font-size: 20px; /* Tamaño del icono */
+}
+#searchInput{
+  width: 120px;
+  border: 1px solid gray;
+}
+
+/* Add this media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .menu-btn{
+    background:url(/img/menu.svg);
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.menu-btn.active{
+    z-index: 999;
+    background: url(/img/menu.svg);
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+}
+header .nav-item{
+  display: none;
+}
+  .navbar-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(216, 208, 208);
+    box-shadow: -2px 0 4px hsl(0 4% 15%/ 10%);
+  }
+
+  .navbar-nav.show {
+    display: flex;
+  }
+
+  .navbar-nav li {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .navbar-toggler {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .navbar-toggler .icon-bar {
+    background-color: #555;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: background-color 0.3s;
+  }
+
+  .navbar-toggler:checked + .navbar-nav {
+    display: flex;
+  }
+
+  .navbar-toggler:checked + .navbar-nav .icon-bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .navbar-toggler:checked + .navbar-nav .icon-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggler:checked + .navbar-nav .icon-bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+/* Estilos para el menú hamburguesa en pantallas más pequeñas */
+@media screen and (max-width: 1040px) {
+  .menu-btn {
+    background: url(/img/menu.svg);
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .menu-btn.active {
+    z-index: 999;
+    background: url(/img/menu.svg);
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+  header .nav-item {
+    display: none;
+  }
+  .navbar-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+  }
+  .navbar-nav.show {
+    display: flex;
+  }
+  .navbar-toggler {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas (380px) */
+
+@media screen and (max-width: 380px) {
+  .menu-btn {
+    background: url(/img/menu.svg);
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .menu-btn.active {
+    z-index: 999;
+    background: url(/img/menu.svg);
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+  header .nav-item {
+    display: none;
+  }
+}
+
+
+
+
+
+
