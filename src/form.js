@@ -159,7 +159,10 @@ form.addEventListener('submit',(e)=>{
   const fd =new FormData(e.target);
   const params =new URLSearchParams(fd);
 
-  fetch ('http://localhost:3000/upload',{
+
+
+  
+  fetch ('https://soyshan.github.io/upload',{
     method:"POST",
     body:params,
 
@@ -203,7 +206,7 @@ app.post('/upload', function(req, res){
 
 
     const params = new URLSearchParams({
-        secret:'6LcB9TQpAAAAAN9czsF1XP84nPO_WvcLkz-pYb0R',
+        secret:'6LekUzgpAAAAAGpPKUJGokol1hp_NZRFnAIu8N7R',
     
         response:req.body['g-recaptcha-response'],
         remoteip: req.ip,
