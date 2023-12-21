@@ -187,20 +187,20 @@ form.addEventListener('submit',(e)=>{
 //Código necesario para que aparezca las imagenes en el captcha
 
 
-const express = require ('express');
+const express = require('express');
 const cors = require('cors');
-const app= express();
-const port =3000;
+const fetch = require('node-fetch'); // Asegúrate de tener node-fetch instalado
 
+const app = express();
+const port = 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://soyshan.github.io',
+  methods: 'POST',
+  credentials: true,
+}));
 
-app.use(express.urlencoded(
-    {
-        extend:false 
-    }
-))
-
+app.use(express.urlencoded({ extended: false }));
 
 app.post('/upload', function(req, res){
 
